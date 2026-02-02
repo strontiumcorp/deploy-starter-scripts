@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-chmod +x ../shared.sh
-source ../shared.sh
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+chmod +x "${SCRIPT_DIR}/../shared.sh"
+source "${SCRIPT_DIR}/../shared.sh"
 
 # Check if apt is installed or the system is debian based
 if ! command -v apt-get &> /dev/null
